@@ -5183,8 +5183,8 @@ __metadata:
 
 "mrz-scanner@file:modules/mrz-scanner::locator=documentacceptrn%40workspace%3A.":
   version: 1.0.0
-  resolution: "mrz-scanner@file:modules/mrz-scanner#modules/mrz-scanner::hash=8eee3c&locator=documentacceptrn%40workspace%3A."
-  checksum: 10c0/e924d3398d4faf4f8f17cdc6127e6df90d407c79a071936df69ecf5b5639c1fdefd14a35f6689e870bb8f0732ecbdfe54c7c9a420ffbd79b14baa228dae91025
+  resolution: "mrz-scanner@file:modules/mrz-scanner#modules/mrz-scanner::hash=2c4bcf&locator=documentacceptrn%40workspace%3A."
+  checksum: 10c0/133cd7601570035281f48e73f21cbe9942e32b968b21edb266b14f218c8fa181b6aecf76c1b455eac63f975c049b4e95d778e252f57c089d8f9e8a991db4f5d2
   languageName: node
   linkType: hard
 
@@ -5461,8 +5461,8 @@ __metadata:
 
 "passport-reader@file:modules/passport-reader::locator=documentacceptrn%40workspace%3A.":
   version: 1.0.0
-  resolution: "passport-reader@file:modules/passport-reader#modules/passport-reader::hash=b7d79c&locator=documentacceptrn%40workspace%3A."
-  checksum: 10c0/675a8515414f88681fd288bb2030aa38b54e547ee6002585fdbf97e8d41295d0091c48e36fc2371e79f7a54ef56db2f46c1cdae5ebd16060efa11186c255f0d2
+  resolution: "passport-reader@file:modules/passport-reader#modules/passport-reader::hash=079e75&locator=documentacceptrn%40workspace%3A."
+  checksum: 10c0/a9d5648ca2c23f31248eb838a7712a3f6e610158dd957960b3a4550983ebedf75c461139e68220249bf28e5548b09895654d3060fab284b8971d653a48cd1d2d
   languageName: node
   linkType: hard
 
