@@ -1,0 +1,32 @@
+# Source (TS is compiled to build/)
+src/
+
+# Example app
+example/
+
+# Config & dev files
+.git/
+.github/
+.expo/
+.vscode/
+.yarn/
+.yarnrc.yml
+.gitignore
+.npmignore
+tsconfig.json
+yarn.lock
+package-lock.json
+node_modules/
+
+# macOS
+.DS_Store
+
+# Android build cache
+android/build/
+android/.gradle/
+android/.kotlin/
+
+# Tests
+__tests__/
+*.test.ts
+*.spec.ts

@@ -1,7 +1,8 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
 # dependencies
 node_modules/
+
+# Build output
+build/
 
 # Expo
 .expo/
@@ -36,14 +37,18 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-# generated native folders
-/ios
+# generated native folders (example app)
+example/ios/
 
 # Android build & cache
-android/.gradle/
-android/.kotlin/
 android/build/
-android/app/build/
-android/app/.cxx/
-android/local.properties
+example/android/.gradle/
+example/android/.kotlin/
+example/android/build/
+example/android/app/build/
+example/android/app/.cxx/
+example/android/local.properties
 *.hprof
+
+# lock files (example uses its own)
+package-lock.json

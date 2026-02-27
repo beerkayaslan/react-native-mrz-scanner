@@ -1,24 +1,30 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+  id 'com.android.library'
+  id 'expo-module-gradle-plugin'
+}
 
-buildscript {
-  repositories {
-    google()
-    mavenCentral()
-  }
-  dependencies {
-    classpath('com.android.tools.build:gradle')
-    classpath('com.facebook.react:react-native-gradle-plugin')
-    classpath('org.jetbrains.kotlin:kotlin-gradle-plugin')
+group = 'com.documentaccept.rn'
+version = '1.0.0'
+
+android {
+  namespace "com.documentaccept.rn.mrzscanner"
+  defaultConfig {
+    versionCode 1
+    versionName "1.0.0"
   }
 }
 
-allprojects {
-  repositories {
-    google()
-    mavenCentral()
-    maven { url 'https://www.jitpack.io' }
-  }
-}
+dependencies {
+  def camerax_version = "1.5.1"
 
-apply plugin: "expo-root-project"
-apply plugin: "com.facebook.react.rootproject"
+  implementation "androidx.camera:camera-core:${camerax_version}"
+  implementation "androidx.camera:camera-camera2:${camerax_version}"
+  implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+  implementation "androidx.camera:camera-view:${camerax_version}"
+
+  implementation "com.google.mlkit:text-recognition:16.0.1"
+
+  implementation "androidx.appcompat:appcompat:1.7.1"
+  implementation "androidx.constraintlayout:constraintlayout:2.2.1"
+  implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.8.7"
+}
