@@ -1,6 +1,6 @@
 {
   "name": "rn-native-mrz-scanner",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A React Native Expo module for scanning MRZ (Machine Readable Zone) from passports and ID cards using the device camera. Supports TD-1 (ID cards) and TD-3 (passports) formats.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
