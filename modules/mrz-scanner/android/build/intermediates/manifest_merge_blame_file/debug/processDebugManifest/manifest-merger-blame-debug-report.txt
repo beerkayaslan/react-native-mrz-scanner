@@ -1,0 +1,32 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.documentaccept.rn.mrzscanner" >
+4
+5    <uses-sdk android:minSdkVersion="24" />
+6
+7    <uses-feature
+7-->/Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:2:5-85
+8        android:name="android.hardware.camera"
+8-->/Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:2:19-57
+9        android:required="false" />
+9-->/Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:2:58-82
+10
+11    <uses-permission android:name="android.permission.CAMERA" />
+11-->/Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:3:5-65
+11-->/Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:3:22-62
+12
+13    <application>
+13-->/Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:5:5-11:19
+14        <activity
+14-->/Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:6:9-10:40
+15            android:name="com.documentaccept.rn.mrzscanner.MRZScannerActivity"
+15-->/Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:7:13-47
+16            android:exported="false"
+16-->/Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:10:13-37
+17            android:screenOrientation="portrait"
+17-->/Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:9:13-49
+18            android:theme="@style/Theme.AppCompat.NoActionBar" />
+18-->/Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:8:13-63
+19    </application>
+20
+21</manifest>

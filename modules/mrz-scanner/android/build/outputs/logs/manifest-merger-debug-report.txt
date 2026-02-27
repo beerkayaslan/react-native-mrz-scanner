@@ -1,0 +1,38 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:1:1-12:12
+INJECTED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:1:1-12:12
+	package
+		INJECTED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:1:11-69
+uses-feature#android.hardware.camera
+ADDED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:2:5-85
+	android:required
+		ADDED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:2:58-82
+	android:name
+		ADDED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:2:19-57
+uses-permission#android.permission.CAMERA
+ADDED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:3:5-65
+	android:name
+		ADDED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:3:22-62
+application
+ADDED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:5:5-11:19
+activity#com.documentaccept.rn.mrzscanner.MRZScannerActivity
+ADDED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:6:9-10:40
+	android:screenOrientation
+		ADDED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:9:13-49
+	android:exported
+		ADDED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:8:13-63
+	android:name
+		ADDED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml:7:13-47
+uses-sdk
+INJECTED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml
+INJECTED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/berkayaslan/Desktop/github/DocumentAcceptRN/modules/mrz-scanner/android/src/main/AndroidManifest.xml

@@ -1,0 +1,16 @@
+{
+    "platforms": [
+        "ios",
+        "android"
+    ],
+    "ios": {
+        "modules": [
+            "PassportReaderModule"
+        ]
+    },
+    "android": {
+        "modules": [
+            "com.documentaccept.rn.passportreader.PassportReaderModule"
+        ]
+    }
+}

@@ -17,7 +17,7 @@
     "expo-router": "^55.0.2",
     "expo-status-bar": "~55.0.4",
     "mrz": "^5.0.1",
-    "react-native-mrz-scanner": "file:modules/mrz-scanner",
+    "mrz-scanner": "file:modules/mrz-scanner",
     "passport-reader": "file:modules/passport-reader",
     "react": "19.2.0",
     "react-dom": "^19.2.0",
