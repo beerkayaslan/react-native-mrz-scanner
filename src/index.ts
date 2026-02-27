@@ -29,7 +29,7 @@ const MRZScannerModule = requireNativeModule<MRZScannerNative>("MRZScanner");
  *
  * @example
  * ```ts
- * import { scanMRZ } from "react-native-mrz-scanner";
+ * import { scanMRZ } from "rn-mrz-scanner";
  *
  * const mrz = await scanMRZ();
  * // or with custom text

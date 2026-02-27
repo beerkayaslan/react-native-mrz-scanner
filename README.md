@@ -1,4 +1,4 @@
-# react-native-mrz-scanner
+# rn-mrz-scanner
 
 A React Native [Expo module](https://docs.expo.dev/modules/overview/) that opens a native full-screen camera scanner to read the **MRZ (Machine Readable Zone)** from passports and ID cards.
 
@@ -14,14 +14,14 @@ Supports **TD-1** (ID cards — 3 × 30 chars) and **TD-3** (passports — 2 × 
 ## Installation
 
 ```bash
-npx expo install react-native-mrz-scanner
+npx expo install rn-mrz-scanner
 ```
 
 or
 
 ```bash
-npm install react-native-mrz-scanner
-# yarn add react-native-mrz-scanner
+npm install rn-mrz-scanner
+# yarn add rn-mrz-scanner
 ```
 
 ### Expo Config Plugin (managed workflow)
@@ -33,7 +33,7 @@ Add the plugin to your `app.json` / `app.config.js`:
   "expo": {
     "plugins": [
       [
-        "react-native-mrz-scanner",
+        "rn-mrz-scanner",
         {
           "cameraPermissionText": "We need camera access to scan your document's MRZ."
         }
@@ -57,7 +57,7 @@ npx expo run:ios   # or run:android
 ## Usage
 
 ```tsx
-import { scanMRZ } from "react-native-mrz-scanner";
+import { scanMRZ } from "rn-mrz-scanner";
 
 export default function App() {
   const handleScan = async () => {

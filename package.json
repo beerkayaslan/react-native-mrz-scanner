@@ -30,12 +30,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/berkayaslan/react-native-mrz-scanner.git"
+    "url": "git+https://github.com/berkayaslan/rn-mrz-scanner.git"
   },
   "bugs": {
-    "url": "https://github.com/berkayaslan/react-native-mrz-scanner/issues"
+    "url": "https://github.com/berkayaslan/rn-mrz-scanner/issues"
   },
-  "homepage": "https://github.com/berkayaslan/react-native-mrz-scanner#readme",
+  "homepage": "https://github.com/berkayaslan/rn-mrz-scanner#readme",
   "peerDependencies": {
     "expo": ">=49.0.0",
     "react": ">=18.0.0",

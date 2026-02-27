@@ -7,7 +7,7 @@ const {
 const pkg = require("./package.json");
 
 /**
- * Expo config plugin for react-native-mrz-scanner.
+ * Expo config plugin for rn-mrz-scanner.
  * Automatically adds camera permissions for iOS and Android.
  *
  * @param {import("expo/config").ExpoConfig} config

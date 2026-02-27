@@ -10,7 +10,7 @@ import {
 import { useRouter } from "expo-router";
 import { useCameraPermissions } from "expo-camera";
 import { parseMRZ, type MRZResult } from "../src/utils/mrzUtils";
-import { scanMRZ } from "react-native-mrz-scanner";
+import { scanMRZ } from "rn-mrz-scanner";
 
 export default function MRZScanScreen() {
   const router = useRouter();
