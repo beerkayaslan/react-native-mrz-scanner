@@ -1,0 +1,88 @@
+diff --git a/node_modules/expo-router/ios/LinkPreview/LinkPreviewNativeNavigation.swift b/node_modules/expo-router/ios/LinkPreview/LinkPreviewNativeNavigation.swift
+index d958ec1..9caf19c 100644
+--- a/node_modules/expo-router/ios/LinkPreview/LinkPreviewNativeNavigation.swift
++++ b/node_modules/expo-router/ios/LinkPreview/LinkPreviewNativeNavigation.swift
+@@ -48,7 +48,9 @@ internal class LinkPreviewNativeNavigation {
+     guard let stackOrTabView else {
+       return
+     }
+-    if let tabView = stackOrTabView as? RNSBottomTabsScreenComponentView {
++    if let tabView = stackOrTabView as? UIView,
++      isBottomTabsScreenComponentView(tabView)
++    {
+       let newTabKeys = tabPath?.path.map { $0.newTabKey } ?? []
+       // The order is important here. findStackViewWithScreenIdInSubViews must be called
+       // even if screenId is nil to compute the tabChangeCommands.
+@@ -150,7 +152,8 @@ internal class LinkPreviewNativeNavigation {
+     if let result =
+       enumeratedViews
+       .first(where: { _, view in
+-        guard let tabView = view as? RNSBottomTabsScreenComponentView, let tabKey = tabView.tabKey
++        guard isBottomTabsScreenComponentView(view),
++          let tabKey = getTabKey(fromBottomTabsScreenView: view)
+         else {
+           return false
+         }
+@@ -162,11 +165,11 @@ internal class LinkPreviewNativeNavigation {
+   }
+ 
+   private func getTabBarControllerFromTabView(view: UIView) -> UITabBarController? {
+-    if let tabScreenView = view as? RNSBottomTabsScreenComponentView {
+-      return tabScreenView.reactViewController()?.tabBarController as? UITabBarController
++    if isBottomTabsScreenComponentView(view) {
++      return getTabBarController(fromBottomTabsScreenView: view)
+     }
+-    if let tabHostView = view as? RNSBottomTabsHostComponentView {
+-      return tabHostView.controller as? UITabBarController
++    if isBottomTabsHostComponentView(view) {
++      return view.value(forKey: "controller") as? UITabBarController
+     }
+     return nil
+   }
+@@ -182,8 +185,10 @@ internal class LinkPreviewNativeNavigation {
+         if view.screenIds.contains(screenId) {
+           return view
+         }
+-      } else if let tabView = nextResponder as? RNSBottomTabsScreenComponentView {
+-        if let tabKey = tabView.tabKey, tabKeys.contains(tabKey) {
++      } else if let tabView = nextResponder as? UIView,
++        isBottomTabsScreenComponentView(tabView)
++      {
++        if let tabKey = getTabKey(fromBottomTabsScreenView: tabView), tabKeys.contains(tabKey) {
+           return tabView
+         }
+       }
+@@ -191,4 +196,33 @@ internal class LinkPreviewNativeNavigation {
+     }
+     return nil
+   }
++
++  private func isBottomTabsScreenComponentView(_ view: UIView) -> Bool {
++    guard let cls = NSClassFromString("RNSBottomTabsScreenComponentView") else {
++      return false
++    }
++    return view.isKind(of: cls)
++  }
++
++  private func isBottomTabsHostComponentView(_ view: UIView) -> Bool {
++    guard let cls = NSClassFromString("RNSBottomTabsHostComponentView") else {
++      return false
++    }
++    return view.isKind(of: cls)
++  }
++
++  private func getTabKey(fromBottomTabsScreenView view: UIView) -> String? {
++    return view.value(forKey: "tabKey") as? String
++  }
++
++  private func getTabBarController(fromBottomTabsScreenView view: UIView) -> UITabBarController? {
++    let selector = NSSelectorFromString("reactViewController")
++    guard view.responds(to: selector),
++      let unmanaged = view.perform(selector),
++      let viewController = unmanaged.takeUnretainedValue() as? UIViewController
++    else {
++      return nil
++    }
++    return viewController.tabBarController
++  }
+ }

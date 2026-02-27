@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "DocumentAcceptRN",
+    "slug": "DocumentAcceptRN",
+    "version": "1.0.0",
+    "newArchEnabled": true,
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "documentacceptrn",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.documentaccept.rn",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Bu uygulama kimlik belgelerinin MRZ alanını taramak için kamera erişimine ihtiyaç duyar.",
+        "NFCReaderUsageDescription": "Kimlik doğrulamak için NFC kullanılır.",
+        "com.apple.developer.nfc.readersession.iso7816.select-identifiers": [
+          "A0000002471001",
+          "A0000002472001",
+          "00000000000000"
+        ]
+      },
+      "entitlements": {
+        "com.apple.developer.nfc.readersession.formats": ["TAG"]
+      }
+    },
+    "android": {
+      "package": "com.documentaccept.rn",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": ["NFC", "CAMERA"]
+    },
+    "plugins": [
+      "expo-camera",
+      "expo-router",
+      [
+        "react-native-nfc-manager",
+        { "nfcPermission": "Kimlik doğrulamak için NFC kullanılır." }
+      ],
+      "./plugins/withNFCEntitlement"
+    ]
+  }
+}

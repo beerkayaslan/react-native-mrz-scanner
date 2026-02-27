@@ -1,0 +1,43 @@
+{
+  "name": "documentacceptrn",
+  "version": "1.0.0",
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "EXPO_UNSTABLE_BONJOUR=0 expo start",
+    "android": "EXPO_UNSTABLE_BONJOUR=0 expo run:android",
+    "ios": "EXPO_UNSTABLE_BONJOUR=0 expo run:ios",
+    "web": "EXPO_UNSTABLE_BONJOUR=0 expo start --web",
+    "postinstall": "npx --yes patch-package"
+  },
+  "dependencies": {
+    "expo": "~55.0.2",
+    "expo-camera": "^55.0.9",
+    "expo-constants": "^55.0.7",
+    "expo-linking": "^55.0.7",
+    "expo-router": "^55.0.2",
+    "expo-status-bar": "~55.0.4",
+    "mrz": "^5.0.1",
+    "react-native-mrz-scanner": "file:modules/mrz-scanner",
+    "passport-reader": "file:modules/passport-reader",
+    "react": "19.2.0",
+    "react-dom": "^19.2.0",
+    "react-native": "0.83.2",
+    "react-native-nfc-manager": "^3.17.2",
+    "react-native-safe-area-context": "^5.7.0",
+    "react-native-screens": "^4.24.0"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.2",
+    "typescript": "~5.9.2"
+  },
+  "expo": {
+    "autolinking": {
+      "searchPaths": [
+        "./modules",
+        "./node_modules"
+      ]
+    }
+  },
+  "private": true,
+  "packageManager": "yarn@4.12.0+sha512.f45ab632439a67f8bc759bf32ead036a1f413287b9042726b7cc4818b7b49e14e9423ba49b18f9e06ea4941c1ad062385b1d8760a8d5091a1a31e5f6219afca8"
+}
