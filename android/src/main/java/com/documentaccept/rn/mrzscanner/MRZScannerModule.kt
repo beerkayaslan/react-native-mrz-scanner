@@ -18,7 +18,7 @@ class MRZScannerModule : Module() {
     override fun definition() = ModuleDefinition {
         Name("MRZScanner")
 
-        AsyncFunction("scanMRZ") { promise: Promise ->
+        AsyncFunction("scanMRZ") { options: Map<String, Any>?, promise: Promise ->
             val activity = appContext.activityProvider?.currentActivity
             if (activity == null) {
                 promise.reject("ERR_NO_ACTIVITY", "Activity bulunamadı.", null)
@@ -28,6 +28,10 @@ class MRZScannerModule : Module() {
             pendingPromise = promise
 
             val intent = Intent(activity, MRZScannerActivity::class.java)
+            val instructionText = options?.get("instructionText") as? String
+            if (!instructionText.isNullOrEmpty()) {
+                intent.putExtra(MRZScannerActivity.EXTRA_INSTRUCTION_TEXT, instructionText)
+            }
             activity.startActivityForResult(intent, REQUEST_CODE_SCAN)
         }
 

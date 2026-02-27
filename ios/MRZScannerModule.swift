@@ -5,14 +5,15 @@ public class MRZScannerModule: Module {
     public func definition() -> ModuleDefinition {
         Name("MRZScanner")
 
-        AsyncFunction("scanMRZ") { (promise: Promise) in
+        AsyncFunction("scanMRZ") { (options: [String: Any]?, promise: Promise) in
+            let instructionText = (options?["instructionText"] as? String)
             DispatchQueue.main.async {
-                self.presentScanner(promise: promise)
+                self.presentScanner(promise: promise, instructionText: instructionText)
             }
         }
     }
 
-    private func presentScanner(promise: Promise) {
+    private func presentScanner(promise: Promise, instructionText: String?) {
         guard let presenter = topViewController() else {
             promise.reject("ERR_UI", "Tarayıcı açılamadı: aktif bir ekran bulunamadı.")
             return
@@ -22,6 +23,10 @@ public class MRZScannerModule: Module {
 
         let scanner = VisionViewController()
         scanner.modalPresentationStyle = .fullScreen
+
+        if let text = instructionText, !text.isEmpty {
+            scanner.instructionText = text
+        }
 
         scanner.completionHandler = { mrz in
             guard !completed else { return }

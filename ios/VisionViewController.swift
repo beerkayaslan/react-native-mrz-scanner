@@ -26,17 +26,19 @@ public class VisionViewController: MRZViewController {
 
     private func setupCloseButton() {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.setTitle("Kapat", for: .normal)
+        let symbolConfig = UIImage.SymbolConfiguration(pointSize: 15, weight: .semibold)
+        closeButton.setImage(UIImage(systemName: "xmark", withConfiguration: symbolConfig), for: .normal)
         closeButton.tintColor = .white
-        closeButton.backgroundColor = UIColor.black.withAlphaComponent(0.45)
-        closeButton.layer.cornerRadius = 8
-        closeButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
+        closeButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        closeButton.layer.cornerRadius = 18
         closeButton.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
 
         view.addSubview(closeButton)
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
-            closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
+            closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            closeButton.widthAnchor.constraint(equalToConstant: 36),
+            closeButton.heightAnchor.constraint(equalToConstant: 36)
         ])
     }
 
