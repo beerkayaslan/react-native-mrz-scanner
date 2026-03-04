@@ -7,13 +7,11 @@ import {
   Alert,
   ActivityIndicator,
 } from "react-native";
-import { useRouter } from "expo-router";
 import { useCameraPermissions } from "expo-camera";
 import { parseMRZ, type MRZResult } from "../src/utils/mrzUtils";
 import { scanMRZ } from "rn-mrz-scanner";
 
 export default function MRZScanScreen() {
-  const router = useRouter();
   const [permission, requestPermission] = useCameraPermissions();
   const [parsedData, setParsedData] = useState<MRZResult | null>(null);
   const [processing, setProcessing] = useState(false);
@@ -68,20 +66,6 @@ export default function MRZScanScreen() {
       },
       "plain-text",
     );
-  };
-
-  const navigateToNFC = () => {
-    if (!parsedData) return;
-    router.push({
-      pathname: "/nfc-read",
-      params: {
-        serialNumber: parsedData.serialNumber,
-        dateOfBirth: parsedData.dateOfBirth,
-        expiryDate: parsedData.expiryDate,
-        firstName: parsedData.firstName,
-        lastName: parsedData.lastName,
-      },
-    });
   };
 
   const resetScan = () => {
@@ -160,10 +144,6 @@ export default function MRZScanScreen() {
             <InfoRow label="Uyruk" value={parsedData.nationality} />
             <InfoRow label="Cinsiyet" value={parsedData.gender} />
           </View>
-
-          <TouchableOpacity style={styles.button} onPress={navigateToNFC}>
-            <Text style={styles.buttonText}>NFC ile Okut →</Text>
-          </TouchableOpacity>
 
           <TouchableOpacity
             style={[styles.button, styles.secondaryButton]}

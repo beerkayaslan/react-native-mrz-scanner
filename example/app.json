@@ -18,15 +18,6 @@
       "bundleIdentifier": "com.documentaccept.rn",
       "infoPlist": {
         "NSCameraUsageDescription": "Bu uygulama kimlik belgelerinin MRZ alanını taramak için kamera erişimine ihtiyaç duyar.",
-        "NFCReaderUsageDescription": "Kimlik doğrulamak için NFC kullanılır.",
-        "com.apple.developer.nfc.readersession.iso7816.select-identifiers": [
-          "A0000002471001",
-          "A0000002472001",
-          "00000000000000"
-        ]
-      },
-      "entitlements": {
-        "com.apple.developer.nfc.readersession.formats": ["TAG"]
       }
     },
     "android": {
@@ -37,16 +28,11 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "permissions": ["NFC", "CAMERA"]
+      "permissions": ["CAMERA"]
     },
     "plugins": [
       "expo-camera",
-      "expo-router",
-      [
-        "react-native-nfc-manager",
-        { "nfcPermission": "Kimlik doğrulamak için NFC kullanılır." }
-      ],
-      "./plugins/withNFCEntitlement"
+      "expo-router"
     ]
   }
 }
