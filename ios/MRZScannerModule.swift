@@ -7,13 +7,14 @@ public class MRZScannerModule: Module {
 
         AsyncFunction("scanMRZ") { (options: [String: Any]?, promise: Promise) in
             let instructionText = (options?["instructionText"] as? String)
+            let isChipShow = (options?["isChipShow"] as? Bool) ?? true
             DispatchQueue.main.async {
-                self.presentScanner(promise: promise, instructionText: instructionText)
+                self.presentScanner(promise: promise, instructionText: instructionText, isChipShow: isChipShow)
             }
         }
     }
 
-    private func presentScanner(promise: Promise, instructionText: String?) {
+    private func presentScanner(promise: Promise, instructionText: String?, isChipShow: Bool = true) {
         guard let presenter = topViewController() else {
             promise.reject("ERR_UI", "Tarayıcı açılamadı: aktif bir ekran bulunamadı.")
             return
@@ -27,6 +28,8 @@ public class MRZScannerModule: Module {
         if let text = instructionText, !text.isEmpty {
             scanner.instructionText = text
         }
+
+        scanner.isChipShow = isChipShow
 
         scanner.completionHandler = { mrz in
             guard !completed else { return }

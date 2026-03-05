@@ -6,6 +6,12 @@ export interface MRZScannerOptions {
    * @default "Kimliğinizin arka yüzünü çerçeveye yerleştirin"
    */
   instructionText?: string;
+
+  /**
+   * Whether to show the chip icon on the scanner overlay.
+   * @default true
+   */
+  isChipShow?: boolean;
 }
 
 export interface MRZScannerNative {

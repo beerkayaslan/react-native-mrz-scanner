@@ -32,6 +32,8 @@ class MRZScannerModule : Module() {
             if (!instructionText.isNullOrEmpty()) {
                 intent.putExtra(MRZScannerActivity.EXTRA_INSTRUCTION_TEXT, instructionText)
             }
+            val isChipShow = (options?.get("isChipShow") as? Boolean) ?: true
+            intent.putExtra(MRZScannerActivity.EXTRA_IS_CHIP_SHOW, isChipShow)
             activity.startActivityForResult(intent, REQUEST_CODE_SCAN)
         }
 

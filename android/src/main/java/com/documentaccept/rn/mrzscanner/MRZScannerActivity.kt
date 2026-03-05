@@ -37,6 +37,7 @@ class MRZScannerActivity : AppCompatActivity() {
     companion object {
         private const val CAMERA_PERMISSION_CODE = 1001
         const val EXTRA_INSTRUCTION_TEXT = "instructionText"
+        const val EXTRA_IS_CHIP_SHOW = "isChipShow"
     }
 
     private lateinit var cameraExecutor: ExecutorService
@@ -51,6 +52,7 @@ class MRZScannerActivity : AppCompatActivity() {
 
         val instructionText = intent.getStringExtra(EXTRA_INSTRUCTION_TEXT)
             ?: "Kimliğinizin arka yüzünü çerçeveye yerleştirin"
+        val isChipShow = intent.getBooleanExtra(EXTRA_IS_CHIP_SHOW, true)
 
         // ── Build UI ──────────────────────────────
 
@@ -69,6 +71,7 @@ class MRZScannerActivity : AppCompatActivity() {
 
         // Chip icon (drawn on a separate view, positioned after layout)
         val chipView = ChipIconView(this)
+        chipView.visibility = if (isChipShow) View.VISIBLE else View.GONE
         root.addView(chipView, FrameLayout.LayoutParams(dp(52), dp(40)))
 
         // MRZ line indicators (3 thin lines)

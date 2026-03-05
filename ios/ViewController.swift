@@ -22,6 +22,10 @@ public class MRZViewController: UIViewController {
         didSet { hintLabel?.text = instructionText }
     }
 
+    var isChipShow: Bool = true {
+        didSet { chipView?.isHidden = !isChipShow }
+    }
+
     // MARK: – Camera & capture
     var currentOrientation = UIDeviceOrientation.portrait
     private let captureSession = AVCaptureSession()
@@ -173,6 +177,7 @@ public class MRZViewController: UIViewController {
 
         // Chip icon (golden IC chip)
         chipView = buildChipView()
+        chipView.isHidden = !isChipShow
         view.addSubview(chipView)
 
         // MRZ line indicators
