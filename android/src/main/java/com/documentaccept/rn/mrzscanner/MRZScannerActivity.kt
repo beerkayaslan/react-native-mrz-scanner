@@ -69,7 +69,7 @@ class MRZScannerActivity : AppCompatActivity() {
 
         // Chip icon (drawn on a separate view, positioned after layout)
         val chipView = ChipIconView(this)
-        root.addView(chipView, FrameLayout.LayoutParams(dp(44), dp(34)))
+        root.addView(chipView, FrameLayout.LayoutParams(dp(52), dp(40)))
 
         // MRZ line indicators (3 thin lines)
         val mrzLinesView = MRZLinesView(this)
@@ -106,8 +106,8 @@ class MRZScannerActivity : AppCompatActivity() {
             if (cardRect.width() > 0f) {
                 // Chip position
                 val chipLP = chipView.layoutParams as FrameLayout.LayoutParams
-                chipLP.leftMargin = (cardRect.left + cardRect.width() * 0.07f).toInt()
-                chipLP.topMargin = (cardRect.top + cardRect.height() * 0.22f).toInt()
+                chipLP.leftMargin = (cardRect.left + cardRect.width() * 0.07f).toInt() + dp(10)
+                chipLP.topMargin = (cardRect.top + cardRect.height() * 0.22f).toInt() + dp(10)
                 chipView.layoutParams = chipLP
 
                 // MRZ lines

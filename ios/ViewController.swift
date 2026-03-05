@@ -232,22 +232,9 @@ public class MRZViewController: UIViewController {
     // ─────────────────────────────────────────────
 
     func calculateRegionOfInterest() {
-        let desiredHeightRatio = 0.25
-        let desiredWidthRatio = 0.8
-        let maxPortraitWidth = 0.9
-
-        let size: CGSize
-        if currentOrientation.isPortrait || currentOrientation == .unknown {
-            size = CGSize(
-                width: min(desiredWidthRatio * bufferAspectRatio, maxPortraitWidth),
-                height: desiredHeightRatio / bufferAspectRatio
-            )
-        } else {
-            size = CGSize(width: desiredWidthRatio, height: desiredHeightRatio)
-        }
-
-        regionOfInterest.origin = CGPoint(x: (1 - size.width) / 2, y: (1 - size.height) / 2)
-        regionOfInterest.size = size
+        // Use full frame for text recognition so alignment with
+        // the card overlay is not critical — matches Android behaviour.
+        regionOfInterest = CGRect(x: 0, y: 0, width: 1, height: 1)
 
         setupOrientationAndTransform()
         DispatchQueue.main.async { self.updateCutout() }
@@ -283,11 +270,11 @@ public class MRZViewController: UIViewController {
         layoutCornerBrackets(cornerRadius: cr)
 
         // 4) Chip icon (upper-left inside card)
-        let chipW: CGFloat = 44
-        let chipH: CGFloat = 34
+        let chipW: CGFloat = 52
+        let chipH: CGFloat = 40
         chipView.frame = CGRect(
-            x: cardRect.minX + cardW * 0.07,
-            y: cardRect.minY + cardH * 0.22,
+            x: cardRect.minX + cardW * 0.07 + 10,
+            y: cardRect.minY + cardH * 0.22 + 10,
             width: chipW,
             height: chipH
         )
